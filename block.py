@@ -11,7 +11,7 @@ class Block:
         self.num_of_transactions = len(input_transactions)
         self.input_transactions = input_transactions
 
-#rrr
+
 def get_hash_merkle_root(transactions):
     # TODO need sha256 hash
     if len(transactions) == 0:
