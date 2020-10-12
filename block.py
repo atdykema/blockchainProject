@@ -14,7 +14,6 @@ class Block:
 
 def get_hash_merkle_root(transactions):
     # TODO need sha256 hash
-    tx = transactions
     if len(transactions) == 0:
         return []
     temp = []
