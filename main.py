@@ -4,7 +4,7 @@ from random import randrange
 
 
 def create_random_transactions():
-    num_of_transactions = randrange(0, 10, 1)
+    num_of_transactions = randrange(1, 10, 1)
     transactions = []
     var = 0
     while var < num_of_transactions:
