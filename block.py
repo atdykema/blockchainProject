@@ -14,22 +14,23 @@ class Block:
 
 def get_hash_merkle_root(transactions):
     # TODO need sha256 hash
-    if len(transactions) == 0:
+    tx = transactions.copy()
+    if tx == 0:
         return []
     temp = []
-    while len(transactions) > 1:
-        concat = transactions[len(transactions)-1] + transactions[len(transactions)-2]
+    while len(tx) > 1:
+        concat = tx[len(tx)-1] + tx[len(tx)-2]
         curr_hash = hashlib.sha256(concat.encode('utf-8')).hexdigest()
         temp.append(curr_hash)
-        del transactions[len(transactions) - 1]
-        del transactions[len(transactions) - 1]
-    if len(transactions) == 1:
-        transactions.append(transactions[0])
-        concat = transactions[0] + transactions[1]
+        del tx[len(tx) - 1]
+        del tx[len(tx) - 1]
+    if len(tx) == 1:
+        tx.append(tx[0])
+        concat = tx[0] + tx[1]
         curr_hash = hashlib.sha256(concat.encode('utf-8')).hexdigest()
         temp.append(curr_hash)
-        del transactions[len(transactions) - 1]
-        del transactions[len(transactions) - 1]
+        del tx[len(tx) - 1]
+        del tx[len(tx) - 1]
     if len(temp) == 1:
         return temp[0]
     else:
