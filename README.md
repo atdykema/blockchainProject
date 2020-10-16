@@ -1,2 +1,2 @@
-# blockchainProject
-This project is based on the idea of recreating fundemental parts of the Bitcoin blockchain in Python
+# The Bitcoin Blockchain in Python
+This project is based on the idea of recreating fundamental parts of the Bitcoin blockchain in Python as a way to hone skills relating to blockchain solutions and the Python language. The goal of the project is to completely recreate the blockchain to be as close to reality as possible while accounting for aspects of the Bitcoin Blockchain which cannot be replicated (history, exact timings).
