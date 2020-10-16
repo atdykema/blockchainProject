@@ -25,6 +25,7 @@ class Block:
 
 
 def get_hash_merkle_root(transactions):
+    hash_ = None
     tx = transactions.copy()
     if len(tx) == 0:
         return []
@@ -45,7 +46,8 @@ def get_hash_merkle_root(transactions):
     if len(temp) == 1:
         return temp[0]
     else:
-        get_hash_merkle_root(temp)
+        hash_ = get_hash_merkle_root(temp)
+        return hash_
 
 
 def get_version():
