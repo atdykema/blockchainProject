@@ -4,9 +4,10 @@ from random import randrange
 
 last_diff_change_block = None
 genesis_block = None
-global_block_height = None
+global_block_height = 0
 
 
+# TODO
 def find_block_at_height(desired_block_height, global_block_height, genesis_block):
     block = genesis_block
     while block.block_height < global_block_height:
@@ -29,6 +30,8 @@ def create_random_transactions():
 
 def create_test_blockchain():
     first_block = Block(None, None, 0, "N/a", create_random_transactions())
+    global genesis_block
+    genesis_block = first_block
     blocks = 1
     last_block = first_block
     while blocks < 10:
@@ -36,6 +39,8 @@ def create_test_blockchain():
         last_block.next_block = temp
         last_block = temp
         blocks += 1
+        global global_block_height
+        global_block_height += 1
     return first_block
 
 
@@ -103,6 +108,7 @@ def main():
         print("***")
         curr_block = curr_block.next_block
     print_block(curr_block)
+    print_block(find_block_at_height(5, curr_block.prev_block.block_height, genesis_block))
 
 
 if __name__ == '__main__':
